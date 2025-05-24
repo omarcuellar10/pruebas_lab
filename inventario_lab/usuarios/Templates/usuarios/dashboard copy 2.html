@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h2>Hola, {{ usuario.first_name|default:usuario.username }} 👋</h2>
+<h3>Bienvenido al Sistema de Control de Inventarios</h3>
+
+<div class="card-container">
+    <div class="card">
+        <h3>➕ Agregar Productos</h3>
+        <p><a href="{% url 'agregar_producto' %}">Ir a productos</a></p>
+    </div>
+    <div class="card">
+        <h3>📦 Stock y Ubicaciones</h3>
+        <p><a href="{% url 'stock_ubicaciones' %}">Ver stock</a></p>
+    </div>
+    <div class="card">
+        <h3>📊 Reportes</h3>
+        <p><a href="{% url 'reportes' %}">Generar reportes</a></p>
+    </div>
+</div>
+{% endblock %}

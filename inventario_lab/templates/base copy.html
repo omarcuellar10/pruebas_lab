@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Inventario{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Sistema de Control de Inventario</h1>
+        {% if user.is_authenticated %}
+            <p>Hola, {{ user.username }} | 
+            <a href="{% url 'dashboard' %}">Dashboard</a> | 
+            <a href="/admin/">Admin</a> | 
+            <a href="/logout/">Cerrar sesión</a></p>
+        {% endif %}
+        <hr>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

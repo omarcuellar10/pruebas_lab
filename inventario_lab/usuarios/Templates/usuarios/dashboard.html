@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<section>
+    <h2>Hola, {{ user.first_name|default:user.username }} 👋</h2>
+    <p>Bienvenido al Sistema de Control de Inventarios</p>
+    <div class="grid">
+        <article>
+            <h3>➕ Agregar Productos</h3>
+            <a href="{% url 'agregar_producto' %}" class="contrast">Ir a productos</a>
+        </article>
+        <article>
+            <h3>📦 Stock y Ubicaciones</h3>
+            <a href="{% url 'stock_ubicaciones' %}" class="contrast">Ver stock</a>
+        </article>
+        <article>
+            <h3>📊 Reportes</h3>
+            <a href="{% url 'reportes' %}" class="contrast">Generar reportes</a>
+        </article>
+    </div>
+</section>
+{% endblock %}
